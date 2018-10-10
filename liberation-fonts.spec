@@ -4,7 +4,7 @@
 #
 Name     : liberation-fonts
 Version  : 2.00.3
-Release  : 1
+Release  : 2
 URL      : https://github.com/liberationfonts/liberation-fonts/archive/2.00.3.tar.gz
 Source0  : https://github.com/liberationfonts/liberation-fonts/archive/2.00.3.tar.gz
 Summary  : No detailed summary available
