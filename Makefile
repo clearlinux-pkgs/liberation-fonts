@@ -1,5 +1,5 @@
 PKG_NAME := liberation-fonts
-URL = https://github.com/liberationfonts/liberation-fonts/archive/2.00.3.tar.gz
+URL = https://github.com/liberationfonts/liberation-fonts/archive/2.00.4.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
