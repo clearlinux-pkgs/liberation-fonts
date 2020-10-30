@@ -4,7 +4,7 @@
 #
 Name     : liberation-fonts
 Version  : 2.00.5
-Release  : 4
+Release  : 5
 URL      : https://github.com/liberationfonts/liberation-fonts/archive/2.00.5.tar.gz
 Source0  : https://github.com/liberationfonts/liberation-fonts/archive/2.00.5.tar.gz
 Summary  : No detailed summary available
@@ -39,22 +39,28 @@ license components for the liberation-fonts package.
 
 %prep
 %setup -q -n liberation-fonts-2.00.5
+cd %{_builddir}/liberation-fonts-2.00.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1551720084
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1604084970
+export GCC_IGNORE_WERROR=1
+export CFLAGS="$CFLAGS -fno-lto "
+export FCFLAGS="$FFLAGS -fno-lto "
+export FFLAGS="$FFLAGS -fno-lto "
+export CXXFLAGS="$CXXFLAGS -fno-lto "
 make  %{?_smp_mflags}
 
 
 %install
-export SOURCE_DATE_EPOCH=1551720084
+export SOURCE_DATE_EPOCH=1604084970
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/liberation-fonts
-cp LICENSE %{buildroot}/usr/share/package-licenses/liberation-fonts/LICENSE
-%make_install :||
+cp %{_builddir}/liberation-fonts-2.00.5/LICENSE %{buildroot}/usr/share/package-licenses/liberation-fonts/0898cb73de9283d38e6f4cef45ce79efbfafb0b2
+:
 ## install_append content
 mkdir -p %{buildroot}/usr/share/fonts/truetype/liberation
 cp liberation-fonts-ttf-*/*.ttf %{buildroot}/usr/share/fonts/truetype/liberation
@@ -80,4 +86,4 @@ cp liberation-fonts-ttf-*/*.ttf %{buildroot}/usr/share/fonts/truetype/liberation
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/liberation-fonts/LICENSE
+/usr/share/package-licenses/liberation-fonts/0898cb73de9283d38e6f4cef45ce79efbfafb0b2
