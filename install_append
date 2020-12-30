@@ -1,2 +1,0 @@
-mkdir -p %{buildroot}/usr/share/fonts/truetype/liberation
-cp liberation-fonts-ttf-*/*.ttf %{buildroot}/usr/share/fonts/truetype/liberation
