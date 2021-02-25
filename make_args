@@ -1,1 +1,1 @@
-DISTPREFIX_TTF=truetype/liberation
+build DISTPREFIX_TTF=truetype/liberation
